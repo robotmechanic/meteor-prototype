@@ -23,6 +23,6 @@ Template.postsList.helpers({posts: postsData});
 */
 Template.postsList.helpers({
   posts: function() {
-    return Posts.find();
+    return Posts.find({}, {sort: {submitted: -1}});  //the sign determines ascending or descending order
   }
 });
