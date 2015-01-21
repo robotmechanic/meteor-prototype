@@ -15,6 +15,12 @@ Template.postSubmit.events(
 			//display the error to the user and abort
 			if(error)
 				return alert(error.reason);
+
+			//Show this result but route anyway 
+			//postExists is set to true in posts.js
+			if (result.postExists)
+				alert('This link has already been posted');
+
 			Router.go('postPage', {_id: result._id});
 		});
 	}
